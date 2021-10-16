@@ -1,0 +1,11 @@
+{
+  "name": "rent_bike",
+  "version": "1.0.0",
+  "description": "Rent a bike by mckrus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mckrus",
+  "license": "ISC"
+}
