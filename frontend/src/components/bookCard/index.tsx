@@ -4,7 +4,6 @@ import tw from "twin.macro";
 import { faCalendarAlt, faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import {screens} from '../../components/responsive'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Marginer } from "../marginer";
@@ -80,11 +79,18 @@ const DateCalendar = styled(Calendar)`
       left: -6em;
     `};
 
-  @media (min-width: ${screens.md}) {
-    top: 3.5em;
-    left: -2em;
-  }
+
 ` as any;
+
+const SmallIcon = styled.span`
+  ${tw`
+    text-gray-500
+    fill-current
+    text-xs
+    md:text-base
+    ml-1
+  `};
+`;
 
 export function BookCard() {
   const [isStartCalendarOpen, setStartCalendarOpen] = useState(false);
@@ -113,6 +119,11 @@ export function BookCard() {
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
         <Name onClick={openFirstCalendar}>Pick Up Start Date</Name>
+
+        <SmallIcon>
+          <FontAwesomeIcon icon={isStartCalendarOpen ? faCaretUp : faCaretDown} />
+        </SmallIcon>
+
         {isStartCalendarOpen && <DateCalendar value={returnDate} onChange={setReturnDate} />}
       </ItemContainer>
       <LineSeperator />
@@ -121,9 +132,13 @@ export function BookCard() {
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
         <Name onClick={openSecondCalendar}>Pick Up Return Date</Name>
-        {returnCalendarOpen && <DateCalendar value={returnDate} onChange={setReturnDate} />}
+
+        {returnCalendarOpen && <DateCalendar offset value={returnDate} onChange={setReturnDate} />}
+
+        <SmallIcon>
+          <FontAwesomeIcon icon={returnCalendarOpen ? faCaretUp : faCaretDown} />
+        </SmallIcon>
       </ItemContainer>
-      <Marginer margin="2em" />
 
       <Marginer direction="horizontal" margin="2em" />
       <Button text="Book Your Ride" />

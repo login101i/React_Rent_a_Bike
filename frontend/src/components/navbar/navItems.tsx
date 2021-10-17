@@ -52,7 +52,16 @@ export function NavItems() {
             <a href="#">Home</a>
           </NavItem>
           <NavItem menu>
-            <a href="#">Bikes</a>
+            <a href="#">About Us</a>
+          </NavItem>
+          <NavItem menu>
+            <a href="#">Services</a>
+          </NavItem>
+          <NavItem menu>
+            <a href="#">Model</a>
+          </NavItem>
+          <NavItem menu>
+            <a href="#">Blog</a>
           </NavItem>
           <NavItem menu>
             <a href="#">Contact Us</a>
@@ -63,14 +72,23 @@ export function NavItems() {
 
   return (
     <ListContainer>
-      <NavItem>
+      <NavItem >
         <a href="#">Home</a>
       </NavItem>
-      <NavItem>
-        <a href="#">Home</a>
+      <NavItem >
+        <a href="#">About Us</a>
       </NavItem>
-      <NavItem>
-        <a href="#">Home</a>
+      <NavItem >
+        <a href="#">Services</a>
+      </NavItem>
+      <NavItem >
+        <a href="#">Model</a>
+      </NavItem>
+      <NavItem >
+        <a href="#">Blog</a>
+      </NavItem>
+      <NavItem >
+        <a href="#">Contact Us</a>
       </NavItem>
     </ListContainer>
   );
